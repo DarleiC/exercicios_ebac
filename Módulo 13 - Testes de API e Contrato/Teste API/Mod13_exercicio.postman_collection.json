@@ -1,0 +1,809 @@
+{
+	"info": {
+		"_postman_id": "9678a57f-1c77-40d0-9fe7-d148f164d902",
+		"name": "Mod13_exercicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST_registerUser",
+			"item": [
+				{
+					"name": "registerUser_id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201 and Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Cadastrado com sucesso \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");\r",
+									"});\r",
+									"\r",
+									"const resposta = pm.response.json();\r",
+									"pm.environment.set(\"id1\", resposta._id);\r",
+									"console.log(pm.environment.get('id1'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei UM\",\r\n    \"email\": \"darlei1@ebac.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201 and Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Cadastrado com sucesso \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");\r",
+									"});\r",
+									"\r",
+									"const resposta = pm.response.json();\r",
+									"pm.environment.set(\"id2\", resposta._id);\r",
+									"console.log(pm.environment.get('id2'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei DOIS\",\r\n    \"email\": \"darlei2@ebac.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_idDel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201 and Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Cadastrado com sucesso \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");\r",
+									"});\r",
+									"\r",
+									"const resposta = pm.response.json();\r",
+									"pm.environment.set(\"idDel\", resposta._id);\r",
+									"console.log(pm.environment.get('idDel'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Usuário a ser excluido\",\r\n    \"email\": \"elevaisair@ebac.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Este email já está sendo usado \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Este email já está sendo usado\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei\",\r\n    \"email\": \"darlei1@ebac.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_invalidemail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = 'email deve ser um email válido' \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.email).to.eql(\"email deve ser um email válido\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei\",\r\n    \"email\": \"darlei.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_invalidadmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Admin não esta 'true' ou 'false' \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.administrador).to.eql(\"administrador deve ser 'true' ou 'false'\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei\",\r\n    \"email\": \"darlei@ebac.com.br\",\r\n    \"password\": \"{{$randomInt}}\",\r\n    \"administrador\": \"True\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser_emptyPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and  Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Senha não pode ser em branco \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.password).to.eql(\"password não pode ficar em branco\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei\",\r\n    \"email\": \"darlei@ebac.com.br\",\r\n    \"password\": \"\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT_editUser",
+			"item": [
+				{
+					"name": "editUser_id1_sucess",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201 and OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Cadastro alterado com sucesso\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Registro alterado com sucesso\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Darlei UM\",\r\n    \"email\": \"darlei1@ebac.com.br\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios/{{id1}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{id1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUser_create_sucess_wrongId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201 and Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Cadastro realizado com sucesso\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Editado com ID errado\",\r\n  \"email\": \"iderradocomsucesso@qa.com.br\",\r\n  \"password\": \"{{$randomInt}}\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios/{{$randomInt}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{$randomInt}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUser_emailExists_wrongId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and Bad Request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Este email já está sendo usado\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Este email já está sendo usado\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Fulano da Silva Sauro\",\r\n  \"email\": \"beltrano@qa.com.br\",\r\n  \"password\": \"{{$randomInt}}\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios/{{$randomInt}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{$randomInt}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET_listUsers",
+			"item": [
+				{
+					"name": "listUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 and string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Deve encontrar 5 usuários\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.quantidade).to.eql(5);\r",
+									"});\r",
+									"// CONFERE A EXISTENCIA DO PRIMEIRO USUARIO CADASTRADO NO TESTE\r",
+									"pm.test(\"Confere se o nome do primeiro usuário cadastrado é 'Darlei UM' \", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    const dataJson = jsonData.usuarios.find(m => m._id === pm.environment.get(\"id1\"))\r",
+									"    pm.expect(dataJson.nome).to.eql(\"Darlei UM\")\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Confere se o primeiro usuário é administrador \", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    const dataJson = jsonData.usuarios.find(m => m._id === pm.environment.get(\"id1\"))\r",
+									"    pm.expect(dataJson.administrador).to.eql(\"true\")\r",
+									"})\r",
+									"\r",
+									"// CONFERE A EXISTENCIA DO SEGUNDO USUARIO CADASTRADO NO TESTE\r",
+									"pm.test(\"Confere se o nome do segundo usuário cadastrado é 'Darlei DOIS' \", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    const dataJson = jsonData.usuarios.find(m => m._id === pm.environment.get(\"id2\"))\r",
+									"    pm.expect(dataJson.nome).to.eql(\"Darlei DOIS\")\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Confere se o segundo usuário não é administrador \", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    const dataJson = jsonData.usuarios.find(m => m._id === pm.environment.get(\"id2\"))\r",
+									"    pm.expect(dataJson.administrador).to.eql(\"false\")\r",
+									"})\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUser_id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 and string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Nome do usuário é : Darlei UM\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.nome).to.eql(\"Darlei UM\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Confere se o usuário é ADM\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.administrador).to.eql(\"true\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{id1}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{id1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUser_id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 and string 'OK'\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Nome do usuário é : Darlei DOIS\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.nome).to.eql(\"Darlei DOIS\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Confere se o usuário não é ADM\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.administrador).to.eql(\"false\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{id2}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{id2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUser_undefined",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400 and 'Bad Request'\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Usuário não encontrado\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Usuário não encontrado\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{$randomInt}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{$randomInt}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE_deleteUser",
+			"item": [
+				{
+					"name": "deleteUser_idDel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Deve Excluir o terceiro(idDel) cadastro \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Registro excluído com sucesso\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{idDel}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{idDel}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser_idDel_again",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Não deve excluir nada\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Nenhum registro excluído\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{idDel}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{idDel}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser_wrongId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response = Não deve encontrar usuário para excluir\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Nenhum registro excluído\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/{{$randomInt}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"{{$randomInt}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000"
+		}
+	]
+}
