@@ -1,6 +1,6 @@
 <h1>EXERCÍCIOS EBAC </h1>
 
-![JavaScript](https://img.shields.io/badge/Progress-13%2F34-black)&nbsp;
+![JavaScript](https://img.shields.io/badge/Progress-14%2F34-black)&nbsp;
 
 Aqui estão os exercícios da EBAC do curso de Engenheiro de Qualidade de SW
 
