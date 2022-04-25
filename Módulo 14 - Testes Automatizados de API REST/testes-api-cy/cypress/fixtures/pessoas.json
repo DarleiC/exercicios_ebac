@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Darlei UM",
+        "email": "darlei1@massa.com.br",
+        "senha": "teste",
+        "administrador": "true"
+    },
+    {
+        "nome": "Darlei Não vai cadastrar",
+        "email": "darlei2.massa.com.br",
+        "senha": "teste",
+        "administrador": "true"
+    },
+    {
+        "nome": "Darlei DOIS",
+        "email": "darlei2@massa.com.br",
+        "senha": "teste",
+        "administrador": "true"
+    },
+    {
+        "nome": "Darlei DOIS EDITADO",
+        "email": "darlei2@massa.com.br",
+        "senha": "123",
+        "administrador": "true"
+    },
+    {
+        "nome": "Usuário VAI SER DELETADO",
+        "email": "darlei2@deleted.com.br",
+        "senha": "123",
+        "administrador": "true"
+    }
+]
