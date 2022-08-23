@@ -1,0 +1,14 @@
+pipeline {
+    agent any     
+        stage('Instalar Dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Execução dos testes') {
+            steps {
+                sh 'NO_COLOR=1 npm run cy:run'
+            }
+        }
+    }
+}
