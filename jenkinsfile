@@ -9,7 +9,7 @@ pipeline {
         }
         stage('mudar dir') {
             steps {
-                dir("${env.WORKSPACE}/Módulo 14 - Testes Automatizados de API REST/testes-api-cy") {
+                dir("Módulo 14 - Testes Automatizados de API REST/testes-api-cy") {
                     sh pwd
                 }
                 sh pwd
