@@ -12,7 +12,6 @@ pipeline {
                 dir("Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy") {
                     sh pwd
                 }
-                sh pwd
             }
         } 
         stage('Instalar Dependencias') {
