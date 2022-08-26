@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    
+    stages{
+        stage('clonar'){
+            steps{
+                git branch: 'main', url: 'https://github.com/DarleiC/exercicios_ebac.git'
+            }
+        }
+        stage('mudar dir') {
+            steps {
+                dir("${env.WORKSPACE}/Módulo 14 - Testes Automatizados de API REST/testes-api-cy") {
+                    sh pwd
+                }
+                sh pwd
+            }
+        } 
+        stage('Instalar Dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Execução dos testes') {
+            steps {
+                sh 'NO_COLOR=1 npm run cy:run'
+            }
+        }
+    }
+}
