@@ -10,7 +10,6 @@ pipeline {
         stage('mudar dir') {
             steps {
                 dir("Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy") {
-                    sh pwd
                 }
             }
         } 
