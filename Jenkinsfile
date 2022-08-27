@@ -2,12 +2,14 @@ pipeline {
     agent any
     options {
         timeout(time: 5, unit: 'MINUTES')
-        checkoutToSubdirectory('Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy')
     }
     stages{
         stage('Instalar Dependencias') {
             steps {
-                sh "npm install"
+                sh '''
+                    cd Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy
+                    npm install
+                '''
             }
         }
         stage('Serverest') {
