@@ -12,7 +12,7 @@ pipeline {
                 '''
             }
         }
-        stage(){
+        stage('Serverest') {
             parallel{
                 stage('serverest'){
                     steps {
