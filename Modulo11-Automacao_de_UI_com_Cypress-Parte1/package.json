@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "video": "false",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "npx cypress run"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,7 @@
   },
   "homepage": "https://github.com/DarleiC/exer11#readme",
   "devDependencies": {
-    "cypress": "^9.4.1",
-    "faker": "^5.5.3"
+    "cypress": "^9.4.1"
   },
   "dependencies": {
     "faker-br": "^0.4.1"
