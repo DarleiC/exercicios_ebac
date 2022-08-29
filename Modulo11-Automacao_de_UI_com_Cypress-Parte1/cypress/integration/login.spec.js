@@ -13,8 +13,9 @@ context('Deve fazer Login na plataforma da EBAC', () => {
         cy.get('#username').type(username)
             .get('#password').type(password)
             .get('.woocommerce-form > .button').click()
-            .get('a > .hidden-xs').should('contain', 'Welcome aluno_ebac !')
-            .get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac (não é aluno_ebac? Sair)')
+            .get('a > .hidden-xs', { timeout: 10000 }).should('be.visible').should('contain','Welcome teste_aluno20 !')
+            // .get('a > .hidden-xs').should('contain', 'Welcome aluno_ebac !')
+            .get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, teste_aluno20 (não é teste_aluno20? Sair)')
     });
 
     it('Errando o username, deve exibir uma mensagem de usarname ou e-mail desconhecido', () => {

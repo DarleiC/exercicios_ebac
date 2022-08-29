@@ -3,11 +3,19 @@ pipeline {
     options {
         timeout(time: 5, unit: 'MINUTES')
     }
+    parameters {
+        choice( name: 'PATH_FILTER', 
+                choices: ["Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy", "Modulo11-Automacao_de_UI_com_Cypress-Parte1"], 
+                description: 'Run on specific platform')
+    }
+    environment{
+        PATH_CHOICE = "${params.PATH_FILTER}"
+    }
     stages{
         stage('Instalar Dependencias') {
             steps {
                 sh '''
-                    cd Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy
+                    cd "${PATH_CHOICE}" 
                     npm install
                 '''
             }
@@ -17,7 +25,7 @@ pipeline {
                 stage('serverest'){
                     steps {
                         sh '''
-                            cd Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy
+                            cd "${PATH_CHOICE}"
                             npm run start
                         '''
                     }
@@ -26,7 +34,7 @@ pipeline {
                     steps{
                         sh '''
                             sleep 20
-                            cd Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy
+                            cd "${PATH_CHOICE}"
                             NO_COLOR=1 npm run cy:run
                         '''
                     }
