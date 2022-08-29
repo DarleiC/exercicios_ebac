@@ -1,4 +1,3 @@
-const { number } = require('joi')
 const Joi = require ('joi')
 
 const produtosSchema = Joi.object({

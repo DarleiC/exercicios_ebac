@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import contrato from '../contracts/usuarios.contract'
+import contrato from '../contracts/produtos.contracts'
 
 describe('Testes da Funcionalidade Produtos', () => {
     let token
