@@ -59,10 +59,10 @@ describe('Testes da Funcionalidade Produtos', () => {
                 headers: {authorization: token}, 
                 body: 
                 {
-                    "nome": "Produto Editado 45642083",
-                    "preco": 100,
+                    "nome": "Produto Editado ja cadastrado",
+                    "preco": 999,
                     "descricao": "Produto editado",
-                    "quantidade": 100
+                    "quantidade": 999
                   }
             }).then(response => {
                 expect(response.body.message).to.equal('Registro alterado com sucesso')
