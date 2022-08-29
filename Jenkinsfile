@@ -43,24 +43,24 @@ pipeline {
                 }
             }
         }
-        else {
-            stages{
-                stage('Instalar Dependencias') {
-                    steps {
-                        sh '''
-                            cd "${PATH_CHOICE}" 
-                            npm install
-                        '''
-                    }
+    }
+    else {
+        stages{
+            stage('Instalar Dependencias') {
+                steps {
+                    sh '''
+                        cd "${PATH_CHOICE}" 
+                        npm install
+                    '''
                 }
-                stage('test'){
-                    steps{
-                        sh '''
-                            sleep 20
-                            cd "${PATH_CHOICE}"
-                            NO_COLOR=1 npm run cy:run
-                        '''
-                    }
+            }
+            stage('test'){
+                steps{
+                    sh '''
+                        sleep 20
+                        cd "${PATH_CHOICE}"
+                        NO_COLOR=1 npm run cy:run
+                    '''
                 }
             }
         }
