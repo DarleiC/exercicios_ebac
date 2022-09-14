@@ -30,7 +30,7 @@ Aqui estão os exercícios da EBAC do curso de Engenheiro de Qualidade de SW
 - [x] Módulo 12 - Automação de UI com Cypress - Parte 2
 - [x] Módulo 13 - Testes de API e Contrato
 - [x] Módulo 14 - Testes Automatizados de API REST
-- [ ] Módulo 15 - DevOps
+- [x] Módulo 15 - DevOps
 - [ ] Módulo 16 - Testes Mobile - Parte 1
 - [ ] Módulo 17 - Testes Mobile - Parte 2
 - [ ] Módulo 18 - Testes de performance
