@@ -11,56 +11,33 @@ pipeline {
     environment{
         PATH_CHOICE = "${params.PATH_FILTER}"
     }
-    if (PATH_CHOICE == "Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy") {
-        stages{
-            stage('Instalar Dependencias') {
-                steps {
-                    sh '''
-                        cd "${PATH_CHOICE}" 
-                        npm install
-                    '''
-                }
-            }
-            stage('Serverest') {
-                parallel{
-                    stage('serverest'){
-                        steps {
-                            sh '''
-                                cd "${PATH_CHOICE}"
-                                npm run start
-                            '''
-                        }
-                    }
-                    stage('test'){
-                        steps{
-                            sh '''
-                                sleep 20
-                                cd "${PATH_CHOICE}"
-                                NO_COLOR=1 npm run cy:run
-                            '''
-                        }
-                    }
-                }
+    stages{
+        stage('Instalar Dependencias') {
+            steps {
+                sh '''
+                    cd "${PATH_CHOICE}" 
+                    npm install
+                '''
             }
         }
-    }
-    else {
-        stages{
-            stage('Instalar Dependencias') {
-                steps {
-                    sh '''
-                        cd "${PATH_CHOICE}" 
-                        npm install
-                    '''
+        stage('Serverest') {
+            parallel{
+                stage('serverest'){
+                    if (PATH_CHOICE == "Modulo14-Testes_Automatizados_de_API_REST/testes-api-cy" ) {
+                        sh '''
+                            cd "${PATH_CHOICE}"
+                            npm run start
+                        '''
+                    }
                 }
-            }
-            stage('test'){
-                steps{
-                    sh '''
-                        sleep 20
-                        cd "${PATH_CHOICE}"
-                        NO_COLOR=1 npm run cy:run
-                    '''
+                stage('test'){
+                    steps{
+                        sh '''
+                            sleep 20
+                            cd "${PATH_CHOICE}"
+                            NO_COLOR=1 npm run cy:run
+                        '''
+                    }
                 }
             }
         }

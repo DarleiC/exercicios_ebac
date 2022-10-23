@@ -7,9 +7,9 @@ context('Deve fazer Login na plataforma da EBAC', () => {
     var password = 'teste@teste.com'
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
     });
-    it('Logar com sucesso', () => {
+    it.only('Logar com sucesso', () => {
         cy.get('#username').type(username)
             .get('#password').type(password)
             .get('.woocommerce-form > .button').click()
