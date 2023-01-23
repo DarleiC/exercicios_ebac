@@ -1,3 +1,4 @@
+/Modulo16-Testes_Mobile_Parte1
 # Logs
 logs
 *.log
@@ -5,6 +6,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+Módulo16-Testes_Mobile_Parte1/App
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
