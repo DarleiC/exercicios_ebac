@@ -34,7 +34,7 @@ Aqui estão os exercícios da EBAC do curso de Engenheiro de Qualidade de SW
 🔲 Módulo 16 - Testes Mobile - Parte 1  
 🔲 Módulo 17 - Testes Mobile - Parte 2  
 🔲 Módulo 18 - Testes de performance  
-🔲 Módulo 19 - Banco de dados SQL e noSQL  
+✅ Módulo 19 - Banco de dados SQL e noSQL  
 🔲 Módulo 20 - Programando com Javascript  
 🔲 Módulo 21 - Testes de unidade  
 🔲 Módulo 22 - Automação de UI com Cypress - Indo além do básico  
