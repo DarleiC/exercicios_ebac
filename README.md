@@ -14,7 +14,7 @@ Aqui estão os exercícios da EBAC do curso de Engenheiro de Qualidade de SW
 [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
 
 
-![Progress](https://img.shields.io/badge/Progress-16%2F34-black)&nbsp;
+![Progress](https://img.shields.io/badge/Progress-17%2F34-black)&nbsp;
 
 ✅ Módulo 01 - O profissional de Qualidade e suas habilidades  
 ✅ Módulo 02 - Qualidade de Software e Network  
@@ -35,7 +35,7 @@ Aqui estão os exercícios da EBAC do curso de Engenheiro de Qualidade de SW
 🔲 Módulo 17 - Testes Mobile - Parte 2  
 🔲 Módulo 18 - Testes de performance  
 ✅ Módulo 19 - Banco de dados SQL e noSQL  
-🔲 Módulo 20 - Programando com Javascript  
+✅ Módulo 20 - Programando com Javascript  
 🔲 Módulo 21 - Testes de unidade  
 🔲 Módulo 22 - Automação de UI com Cypress - Indo além do básico  
 🔲 Módulo 23 - Automação de UI com Cypress - Tornando o seu projeto completo  
